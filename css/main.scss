@@ -1,0 +1,123 @@
+---
+layout: none
+---
+
+@import 'constants';
+@import url('fonts.css');
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  font-size: 14px;
+  @include media-query(DESKTOP) {
+    font-size: 18px;
+  }
+}
+
+body {
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  background-color: $BACKGROUND-COLOR;
+
+  font: normal $TEXT-SIZE $FONT-SANS;
+  color: $TEXT-COLOR;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+s {
+  text-decoration: line-through;
+}
+
+a {
+  font: normal $TEXT-SIZE $FONT-SANS;
+  color: $LINK-COLOR;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color $TRANSITION-PERIOD linear;
+
+  &:visited {
+    color: $LINK-COLOR-VISITED;
+  }
+
+  &:hover {
+    color: $LINK-COLOR-HOVER;
+  }
+}
+
+.backround-image {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  position: relative;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url({{ site.baseurl }}/media/images/backgrounds/background-0.jpg);
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 32px;
+
+  @include media-query(DESKTOP) {
+    flex-direction: row;
+  }
+}
+
+.content-container {
+  .list-container {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    border: 4px solid #000;
+    background-color: rgba(200,20,20,.4);
+    
+    @include media-query(DESKTOP) {
+      width: 66%;
+    }
+  }
+
+  .info-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    border: 4px solid #000;
+    background-color: rgba(20,20,200,.4);
+    
+    @include media-query(DESKTOP) {
+      width: 33%;
+    }
+  }
+}
+
+.content-container {
+  .info-container {
+    .info-title {
+      width: 40%;
+    }
+    .info-content {
+      width: 60%;
+    }
+  }
+}

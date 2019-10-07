@@ -1,0 +1,56 @@
+@font-face {
+    font-family: liberation-sans;
+    src: url(fonts/liberation-sans/LiberationSans-Regular.ttf);
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: liberation-sans;
+    src: url(fonts/liberation-sans/LiberationSans-Bold.ttf);
+    font-style: normal;
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: liberation-sans;
+    src: url(fonts/liberation-sans/LiberationSans-Italic.ttf);
+    font-style: italic;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: liberation-sans;
+    src: url(fonts/liberation-sans/LiberationSans-BoldItalic.ttf);
+    font-style: italic;
+    font-weight: bold;
+}
+
+
+@font-face {
+    font-family: liberation-serif;
+    src: url(fonts/liberation-serif/LiberationSerif-Regular.ttf);
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: liberation-serif;
+    src: url(fonts/liberation-serif/LiberationSerif-Bold.ttf);
+    font-style: normal;
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: liberation-serif;
+    src: url(fonts/liberation-serif/LiberationSerif-Italic.ttf);
+    font-style: italic;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: liberation-serif;
+    src: url(fonts/liberation-serif/LiberationSerif-BoldItalic.ttf);
+    font-style: italic;
+    font-weight: bold;
+}

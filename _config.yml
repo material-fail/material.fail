@@ -1,0 +1,42 @@
+# Site
+title: 'material.fail'
+subtitle: ''
+
+# URL
+url: https://material.fail
+baseurl: ''
+permalink: :categories/:title/
+include: ['_pages']
+
+# Build settings
+markdown: kramdown
+port: 9669
+future: false
+
+# Defaults
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "publisher"
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "publisher"
+
+# Data
+social:
+  facebook: "https://www.facebook.com/user"
+  instagram: "https://www.instagram.com/user"
+  github: "https://github.com/materialfail-org"
+  twitter: "https://twitter.com/user"
+  youtube: ""
+  vimeo: ""
+  soundcloud: ""
+  tumblr: ""
+  pinterest: ""
+  envelope-o: "mailto:material@material.fail"

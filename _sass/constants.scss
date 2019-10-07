@@ -1,0 +1,23 @@
+$FONT-SANS: 'liberation-sans', 'Arial', sans-serif;
+$FONT-SERIF: 'liberation-serif', 'Times';
+
+$TITLE-SIZE: 1rem;
+$TEXT-SIZE: 1rem;
+$LINK-SIZE: 1rem;
+
+$BACKGROUND-COLOR: #000;
+$TEXT-COLOR: #fff;
+
+$LINK-COLOR: $TEXT-COLOR;
+$LINK-COLOR-VISITED: $LINK-COLOR;
+$LINK-COLOR-HOVER: $LINK-COLOR;
+
+$DESKTOP-MIN-WIDTH: 640px;
+
+$TRANSITION-PERIOD: 0.1s;
+
+@mixin media-query($canvas) {
+  @if $canvas == DESKTOP {
+   @media only screen and (min-width: $DESKTOP-MIN-WIDTH) { @content; }
+  }
+}
