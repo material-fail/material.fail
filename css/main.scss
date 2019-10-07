@@ -111,16 +111,29 @@ a {
 .content-container {
   .info-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     background-image: radial-gradient(rgba(0,0,0,.5), rgba(0,0,0,0) 120%);
 
+    @include media-query(DESKTOP) {
+      flex-direction: row;
+    }
+
     .info-title-container {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 12px;
       font: bold $TITLE-SIZE $FONT-SERIF;
+
+      @include media-query(DESKTOP) {
+        display: block;
+        margin-bottom: 0;
+      }
 
       .info-title-languages {
         width: 100%;
-        padding-top: 32px;
+        padding-top: 0;
+        padding-left: 32px;
         display: flex;
         flex-direction: row;
         font: normal $SUBTEXT-SIZE-MOBILE $FONT-SANS;
@@ -128,6 +141,8 @@ a {
 
         @include media-query(DESKTOP) {
           font-size: $SUBTEXT-SIZE;
+          padding-top: 32px;
+          padding-left: 0;
         }
 
         .language-selector {
