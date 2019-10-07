@@ -47,10 +47,16 @@ function selectThisLanguage() {
 }
 
 window.onload = function() {
+  // load onclicks
   const langDivs = document.getElementsByClassName('language-selector');
-
   for(let i = 0; i < langDivs.length; i++) {
     langDivs[i].onclick = selectThisLanguage;
     langDivs[i].click();
+  }
+
+  // set background image
+  const bgDiv = document.getElementById('daily-image');
+  if(bgDiv) {
+    bgDiv.style['background-image'] = `url({{ site.baseurl }}/media/images/backgrounds/background-${getBackgroundImageIndex()}.jpg)`;
   }
 }
