@@ -12,6 +12,7 @@
             {% for pub in site.publishers %}
               <a href="{{ site.baseurl }}{{ pub.url }}">{{ pub.title }}</a>
             {% endfor %}
+          {% elsif page.title == "404" %}
           {% else %}
             BOOK 0<br>
             LIVRO 1<br>
