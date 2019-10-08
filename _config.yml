@@ -62,14 +62,6 @@ prose:
     - media/images/covers
   metadata:
     _publishers:
-      - name: "layout"
-        field:
-          element: "hidden"
-          value: "home"
-      - name: "published"
-        field:
-          element: "hidden"
-          value: "true"
       - name: "title"
         field:
           element: "text"
