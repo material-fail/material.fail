@@ -59,6 +59,7 @@ prose:
     - css
     - js
     - media/favicons
+    - media/images/covers
   metadata:
     _publishers:
       - name: "layout"
