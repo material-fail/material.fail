@@ -5,8 +5,12 @@ subtitle: ''
 # URL
 url: https://material.fail
 baseurl: ''
-permalink: :categories/:title/
 include: ['_pages']
+collections:
+  publishers:
+    output: true
+    permalink: /:name/
+
 
 # Build settings
 markdown: kramdown
@@ -17,14 +21,8 @@ future: false
 defaults:
   -
     scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "publisher"
-  -
-    scope:
-      path: ""
-      type: "pages"
+      path: "_publishers"
+      type: "publishers"
     values:
       layout: "publisher"
 

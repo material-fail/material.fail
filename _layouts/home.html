@@ -8,8 +8,9 @@
     <div id="daily-image" class="backround-image">
       <div class="content-container">
         <div class="list-container">
-          EDITORA<br>
-          EDITORE<br>
+          {% for pub in site.publishers %}
+            <a href="{{ site.baseurl }}{{ pub.url }}">{{ pub.title }}</a>
+          {% endfor %}
         </div>
 
         <div class="info-container-wrapper">

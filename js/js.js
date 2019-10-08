@@ -15,7 +15,7 @@ function getDayOfYear() {
   const diff = now - start;
   const oneDayMillis = 1000 * 60 * 60 * 24;
   const dayOfYear = Math.floor(diff / oneDayMillis);
-  return dayOfYear;
+  return dayOfYear + window.location.href.length;
 }
 
 function getBackgroundImageIndex() {
