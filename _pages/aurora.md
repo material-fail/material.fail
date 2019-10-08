@@ -5,4 +5,9 @@ about-es: 'Edições Aurora fue fundada en 2013 y terminó sus actividades en 20
 about-pt: 'Edições Aurora foi fundada em 2013 e encerrou suas atividades em 2018.<br><br>Gerida por Júlia Ayerbe, Laura Daviña e Marina Marchesan, a editora trazia para o campo editorial produções visuais e escritas sobre arte e política numa perspectiva expandida.'
 site: http://edicoesaurora.com
 email: contato@edicoesaurora.com
+books:
+  - title: NAME OF BOOK
+    link: https://hahaha.com/book0.pdf
+  - title: TITLE OF BOOK
+    link: https://hahaha.com/book2.pdf
 ---

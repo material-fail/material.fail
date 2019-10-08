@@ -16,8 +16,9 @@
           {% elsif page.title == "404" %}
             <div class="_404-text">404</div>
           {% else %}
-            <div class="list-item"><a href="">LIVRO 0</a></div>
-            <div class="list-item"><a href="">LIVRO 1</a></div>
+            {% for book in page.books %}
+              <div class="list-item"><a href="{{ book.link }}" target="_blank">{{ book.title }}</a></div>
+            {% endfor %}
           {% endif %}
 
           {% unless page.title == "material.fail" %}
