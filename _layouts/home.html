@@ -19,6 +19,7 @@
             {% for book in page.books %}
               <div class="list-item"><a href="{{ book.link }}" target="_blank">{{ book.title }}</a></div>
             {% endfor %}
+            {{ content }}
           {% endif %}
 
           {% unless page.title == "material.fail" %}

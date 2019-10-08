@@ -11,3 +11,5 @@ books:
   - title: TITLE OF BOOK
     link: https://hahaha.com/book2.pdf
 ---
+- [NAME OF BOOK](https://material.failm/book0.pdf){:target="_blank"}
+- [TITLE OF BOOK](https://material.fail/book1.pdf){:target="_blank"}
