@@ -21,6 +21,12 @@ future: false
 defaults:
   -
     scope:
+      path: "_pages"
+      type: "pages"
+    values:
+      layout: "home"
+  -
+    scope:
       path: "_publishers"
       type: "publishers"
     values:
@@ -38,3 +44,58 @@ social:
   tumblr: ""
   pinterest: ""
   envelope-o: "mailto:material@material.fail"
+
+# prose.io
+prose:
+  media: 'media/images'
+  ignore:
+    - CNAME
+    - .gitignore
+    - _config.yml
+    - _includes
+    - _layouts
+    - _pages/404.md
+    - _sass
+    - css
+    - js
+    - media/favicons
+  metadata:
+    _publishers:
+      - name: "layout"
+        field:
+          element: "hidden"
+          value: "home"
+      - name: "published"
+        field:
+          element: "hidden"
+          value: "true"
+      - name: "title"
+        field:
+          element: "text"
+          label: "nome da editora"
+          placeholder: "Colocar Aqui o Nome Da Editora"
+      - name: "site"
+        field:
+          element: "text"
+          label: "site da editora"
+          placeholder: "https://editora.com"
+      - name: "email"
+        field:
+          element: "text"
+          label: "email de contato da editora"
+          placeholder: "contato@editora.com"
+      - name: "about-en"
+        field:
+          element: "text"
+          label: "descrição da editora em INGLÊS"
+          placeholder: "bla bla bla"
+      - name: "about-es"
+        field:
+          element: "text"
+          label: "descrição da editora em ESPANHOL"
+          placeholder: "bla bla bla"
+      - name: "about-pt"
+        field:
+          element: "text"
+          label: "descrição da editora em PORTUGUÊS"
+          placeholder: "bla bla bla"

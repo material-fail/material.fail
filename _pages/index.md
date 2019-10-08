@@ -1,5 +1,4 @@
 ---
-layout: home
 title: material.fail
 permalink: /
 about-en: 'is a pdf library of independent publishers. It makes available for download publications that had or have physical copies in circulation. material.fail is the result of the failure, exhaustion, production difficulties and permanence of these materials, and the extraordinary nature of printed production, which is increasingly useless and necessary.<br><br>The digital does not replace the printed matter, so, if feasible, be sure to search for the original versions of these texts with the publishers, which provided their material for this website.'
