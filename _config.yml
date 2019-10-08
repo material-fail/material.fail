@@ -78,16 +78,16 @@ prose:
           placeholder: "contato@editora.com"
       - name: "about-en"
         field:
-          element: "text"
+          element: "textarea"
           label: "descrição da editora em INGLÊS"
           placeholder: "bla bla bla"
       - name: "about-es"
         field:
-          element: "text"
+          element: "textarea"
           label: "descrição da editora em ESPANHOL"
           placeholder: "bla bla bla"
       - name: "about-pt"
         field:
-          element: "text"
+          element: "textarea"
           label: "descrição da editora em PORTUGUÊS"
           placeholder: "bla bla bla"
