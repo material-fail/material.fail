@@ -118,6 +118,13 @@ a {
       overflow: hidden;
     }
 
+    .list-item {
+      display: block;
+      & + .list-item {
+        margin-top: 10px;
+      }
+    }
+
     .home-button {
       position: absolute;
       top: 0;
@@ -181,6 +188,7 @@ a {
           }
           &.selected {
             text-decoration: underline;
+            cursor: default;
           }
         }
       }

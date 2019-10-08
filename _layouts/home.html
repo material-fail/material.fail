@@ -11,13 +11,13 @@
           {% if page.title == "material.fail" %}
             {% assign publishers = site.pages | where_exp:"page","page.unlist != true" %}
             {% for pub in publishers %}
-              <a href="{{ site.baseurl }}{{ pub.url }}">{{ pub.title }}</a>
+              <a class="list-item" href="{{ site.baseurl }}{{ pub.url }}">{{ pub.title }}</a>
             {% endfor %}
           {% elsif page.title == "404" %}
             <div class="_404-text">404</div>
           {% else %}
-            BOOK 0<br>
-            LIVRO 1<br>
+            <a class="list-item" href="">LIVRO 0</a>
+            <a class="list-item" href="">LIVRO 1</a>
           {% endif %}
 
           {% unless page.title == "material.fail" %}
