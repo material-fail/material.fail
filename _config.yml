@@ -61,6 +61,11 @@ prose:
         field:
           element: "hidden"
           value: "true"
+      - name: "title"
+        field:
+          element: "text"
+          label: "nome da editora"
+          placeholder: "Colocar Aqui o Nome Da Editora"
       - name: "site"
         field:
           element: "text"
