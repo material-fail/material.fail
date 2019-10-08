@@ -6,10 +6,11 @@ subtitle: ''
 url: https://material.fail
 baseurl: ''
 include: ['_pages']
+
 collections:
-  publishers:
+  pages:
     output: true
-    permalink: /:name/
+    permalink: /:name
 
 
 # Build settings
@@ -23,12 +24,6 @@ defaults:
     scope:
       path: "_pages"
       type: "pages"
-    values:
-      layout: "home"
-  -
-    scope:
-      path: "_publishers"
-      type: "publishers"
     values:
       layout: "home"
 
@@ -61,7 +56,11 @@ prose:
     - media/favicons
     - media/images/covers
   metadata:
-    _publishers:
+    _pages:
+      - name: "published"
+        field:
+          element: "hidden"
+          value: "true"
       - name: "title"
         field:
           element: "text"

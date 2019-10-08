@@ -9,7 +9,8 @@
       <div class="content-container">
         <div class="list-container">
           {% if page.title == "material.fail" %}
-            {% for pub in site.publishers %}
+            {% assign publishers = site.pages | where_exp:"page","page.unlist != true" %}
+            {% for pub in publishers %}
               <a href="{{ site.baseurl }}{{ pub.url }}">{{ pub.title }}</a>
             {% endfor %}
           {% elsif page.title == "404" %}
