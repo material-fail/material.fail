@@ -24,7 +24,7 @@ defaults:
       path: "_publishers"
       type: "publishers"
     values:
-      layout: "publisher"
+      layout: "home"
 
 # Data
 social:

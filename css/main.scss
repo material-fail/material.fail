@@ -9,10 +9,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  font-size: 14px;
-  @include media-query(DESKTOP) {
-    font-size: 18px;
-  }
+  font-size: 18px;
 }
 
 body {
@@ -122,18 +119,21 @@ a {
     }
 
     .info-title-container {
+      width: 100%;
       display: flex;
       flex-direction: row;
+      align-items: baseline;
       margin-bottom: 12px;
       font: bold $TITLE-SIZE $FONT-SERIF;
 
       @include media-query(DESKTOP) {
         display: block;
         margin-bottom: 0;
+        width: auto;
       }
 
       .info-title-languages {
-        width: 100%;
+        width: auto;
         padding-top: 0;
         padding-left: 32px;
         display: flex;
@@ -145,6 +145,7 @@ a {
           font-size: $SUBTEXT-SIZE;
           padding-top: 32px;
           padding-left: 0;
+          width: 100%;
         }
 
         .language-selector {
@@ -160,13 +161,22 @@ a {
     }
 
     .info-content-container {
+      padding-left: 16px;
       text-decoration: underline;
       font: normal $TEXT-SIZE $FONT-SANS;
       line-height: 1.5;
-      padding-left: 16px;
 
       @include media-query(DESKTOP) {
         font-size: $SUBTEXT-SIZE;
+      }
+
+      .info-content {
+        display: none;
+      }
+
+      .publisher-link {
+        display: block;
+        margin-top: 22px;
       }
     }
   }

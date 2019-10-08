@@ -8,22 +8,34 @@
     <div id="daily-image" class="backround-image">
       <div class="content-container">
         <div class="list-container">
-          {% for pub in site.publishers %}
-            <a href="{{ site.baseurl }}{{ pub.url }}">{{ pub.title }}</a>
-          {% endfor %}
+          {% if page.title == "material.fail" %}
+            {% for pub in site.publishers %}
+              <a href="{{ site.baseurl }}{{ pub.url }}">{{ pub.title }}</a>
+            {% endfor %}
+          {% else %}
+            BOOK 0<br>
+            LIVRO 1<br>
+          {% endif %}
         </div>
 
         <div class="info-container-wrapper">
           <div class="info-container">
             <div class="info-title-container">
-              <div class="info-title-title">material.fail</div>
+              <div class="info-title-title">{{ page.title }}</div>
               <div class="info-title-languages">
                 <div class="language-selector">en</div>
                 <div class="language-selector">es</div>
                 <div class="language-selector">pt</div>
               </div>
             </div>
-            <div id="intro-text" class="info-content-container"></div>
+            <div id="intro-text" class="info-content-container">
+              <div id="info-en" class="info-content">{{ page.about-en }}</div>
+              <div id="info-es" class="info-content">{{ page.about-es }}</div>
+              <div id="info-pt" class="info-content">{{ page.about-pt }}</div>
+              {% if page.site %}
+                <a class="publisher-link" href={{ page.site }} target="_blank">{{ page.site }}</a>
+              {% endif %}
+            </div>
           </div>
         </div>
       </div>
