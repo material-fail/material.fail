@@ -9,4 +9,6 @@ about-en: Very indie publisher. I liked it when it was unknown.
 books:
   - title: nome do libro
     link: 'https://link-pro-livro.com/lll.pdf'
+  - title: um dois livros
+    link: 'https://link-pro-livro.com/lll222.pdf'
 ---
