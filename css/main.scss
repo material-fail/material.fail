@@ -8,8 +8,6 @@ layout: none
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  font-size: 18px;
 }
 
 body {
@@ -18,7 +16,7 @@ body {
   width: 100%;
   background-color: $BACKGROUND-COLOR;
 
-  font: normal $TEXT-SIZE $FONT-SANS;
+  font: normal $INFO-TEXT-SIZE $FONT-SANS;
   color: $TEXT-COLOR;
 }
 
@@ -35,12 +33,12 @@ s {
 }
 
 a {
-  font: normal $TEXT-SIZE $FONT-SANS;
-  color: $LINK-COLOR;
   cursor: pointer;
   text-decoration: none;
   transition: color $TRANSITION-PERIOD linear;
   font-size: inherit;
+
+  color: $LINK-COLOR;
 
   &:visited {
     color: $LINK-COLOR-VISITED;
@@ -106,7 +104,7 @@ a {
     @include media-query(DESKTOP) {
       width: 33%;
       height: 100%;
-      min-width: 420px;
+      min-width: 400px;
     }
   }
 }
@@ -119,7 +117,7 @@ a {
     }
 
     .list-item {
-      display: block;
+      font-size: $LIST-TEXT-SIZE;
       & + .list-item {
         margin-top: 10px;
       }
@@ -131,11 +129,11 @@ a {
       right: 0;
 
       cursor: pointer;
-      font: normal $SUBTEXT-SIZE-MOBILE $FONT-SERIF;
+      font-size: $INFO-TITLE-SIZE;
       text-decoration: none;
 
       @include media-query(DESKTOP) {
-        font-size: $TEXT-SIZE;
+        font-size: $INFO-TITLE-SIZE;
       }
     }
   }
@@ -159,12 +157,14 @@ a {
       flex-direction: row;
       align-items: baseline;
       margin-bottom: 12px;
-      font: bold $TITLE-SIZE $FONT-SERIF;
+      font-weight: bold;
+      font-size: $INFO-TITLE-SIZE;
 
       @include media-query(DESKTOP) {
         display: block;
         margin-bottom: 0;
         width: auto;
+        min-width: 120px;
       }
 
       .info-title-languages {
@@ -172,12 +172,12 @@ a {
         padding: 0 32px;
         display: flex;
         flex-direction: row;
-        font: normal $SUBTEXT-SIZE-MOBILE $FONT-SANS;
-        text-decoration: none;
+        font-size: $INFO-TEXT-SIZE;
+        font-weight: normal;
 
         @include media-query(DESKTOP) {
-          font-size: $SUBTEXT-SIZE;
-          padding: 32px 0;
+          font-size: $INFO-TEXT-SIZE;
+          padding: 16px 0;
           width: 100%;
         }
 
@@ -198,12 +198,13 @@ a {
       width: 100%;
       padding-left: 16px;
       box-sizing: border-box;
-      text-decoration: underline;
-      font: normal $TEXT-SIZE $FONT-SANS;
+      font-family: $FONT-SERIF;
+      font-size: $INFO-TEXT-SIZE;
+      font-weight: bold;
       line-height: 1.5;
 
       @include media-query(DESKTOP) {
-        font-size: $SUBTEXT-SIZE;
+        font-size: $INFO-TEXT-SIZE;
       }
 
       .info-content {
@@ -213,6 +214,9 @@ a {
       .publisher-link {
         display: block;
         margin-top: 22px;
+        text-align: right;
+        font-family: $FONT-SANS;
+        font-weight: normal;
       }
     }
   }
