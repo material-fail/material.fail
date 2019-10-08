@@ -13,14 +13,20 @@
               <a href="{{ site.baseurl }}{{ pub.url }}">{{ pub.title }}</a>
             {% endfor %}
           {% elsif page.title == "404" %}
+            <div class="_404-text">404</div>
           {% else %}
             BOOK 0<br>
             LIVRO 1<br>
           {% endif %}
+
+          {% unless page.title == "material.fail" %}
+            <a href="{{ site.baseurl }}/" class="home-button">material.fail</a>
+          {% endunless %}
         </div>
 
         <div class="info-container-wrapper">
           <div class="info-container">
+
             <div class="info-title-container">
               <div class="info-title-title">{{ page.title }}</div>
               <div class="info-title-languages">
@@ -29,6 +35,7 @@
                 <div class="language-selector">pt</div>
               </div>
             </div>
+
             <div id="intro-text" class="info-content-container">
               <div id="info-en" class="info-content">{{ page.about-en }}</div>
               <div id="info-es" class="info-content">{{ page.about-es }}</div>
@@ -37,6 +44,7 @@
                 <a class="publisher-link" href={{ page.site }} target="_blank">{{ page.site }}</a>
               {% endif %}
             </div>
+
           </div>
         </div>
       </div>
