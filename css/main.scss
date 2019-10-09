@@ -155,7 +155,9 @@ a {
     flex-direction: column;
     justify-content: space-between;
     align-items: baseline;
-    background-image: radial-gradient(rgba(0,0,0,.5), rgba(0,0,0,0) 120%);
+    background-color: rgba(0,0,0,.33);
+    padding: 16px;
+    box-sizing: border-box;
 
     @include media-query(DESKTOP) {
       flex-direction: row;
