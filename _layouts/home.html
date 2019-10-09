@@ -10,15 +10,23 @@
         <div class="list-container">
           {% if page.title == "material.fail" %}
             {% assign publishers = site.pages | where_exp:"page","page.unlist != true" %}
+            <ul>
             {% for pub in publishers %}
-              <div class="list-item"><a href="{{ site.baseurl }}{{ pub.url }}">{{ pub.title }}</a></div>
+              <li>
+                <a href="{{ site.baseurl }}{{ pub.url }}">{{ pub.title }}</a>
+              </li>
             {% endfor %}
+            </ul>
           {% elsif page.title == "404" %}
             <div class="_404-text">404</div>
           {% else %}
+            <ul>
             {% for book in page.books %}
-              <div class="list-item"><a href="{{ book.link }}" target="_blank">{{ book.title }}</a></div>
+              <li>
+                <a href="{{ book.link }}" target="_blank">{{ book.title }}</a>
+              </li>
             {% endfor %}
+            </ul>
             {{ content }}
           {% endif %}
 

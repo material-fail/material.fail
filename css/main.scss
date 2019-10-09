@@ -122,9 +122,13 @@ a {
       padding: 0;
     }
 
-    .list-item, li {
+    ul + ul {
+      margin-top: 10px;
+    }
+
+    li {
       font-size: $LIST-TEXT-SIZE;
-      & + .list-item, & + li {
+      & + li {
         margin-top: 10px;
       }
     }
