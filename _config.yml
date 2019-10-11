@@ -6,6 +6,7 @@ subtitle: ''
 url: https://material.fail
 baseurl: ''
 include: ['_pages']
+exclude: ['python']
 
 collections:
   pages:
