@@ -16,7 +16,7 @@ body {
   width: 100%;
   background-color: $BACKGROUND-COLOR;
 
-  font: normal $INFO-TEXT-SIZE $FONT-SANS;
+  font: bold $INFO-TEXT-SIZE $FONT-SANS;
   color: $TEXT-COLOR;
 }
 
@@ -58,6 +58,7 @@ a {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-image: url({{ site.baseurl }}/media/images/backgrounds/background-0.jpg);
 
   @include media-query(DESKTOP) {
     height: 100vh;
@@ -67,12 +68,11 @@ a {
 .content-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   width: 100vw;
   height: 100%;
   min-height: 100vh;
   box-sizing: border-box;
-  padding: 32px;
+  padding: 20px;
 
   @include media-query(DESKTOP) {
     flex-direction: row;
@@ -81,30 +81,36 @@ a {
 }
 
 .content-container {
+  .info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 0;
+    padding-left: 20px;
+    margin: 0;
+    box-sizing: border-box;
+
+    // border: 1px #fff solid;
+
+    @include media-query(DESKTOP) {
+      width: 20%;
+      height: 100%;
+    }
+  }
+
   .list-container {
-    position: relative;
     width: 100%;
     height: 100%;
     padding: 0;
     margin: 0;
-    
-    @include media-query(DESKTOP) {
-      width: 66%;
-    }
-  }
+    box-sizing: border-box;
 
-  .info-container-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    width: 100%;
-    padding: 0;
-    margin: 0;
+    // border: 1px #fff solid;
     
     @include media-query(DESKTOP) {
-      width: 33%;
-      height: 100%;
-      min-width: 400px;
+      width: 80%;
+      padding-left: 200px;
     }
   }
 }
@@ -132,90 +138,56 @@ a {
         margin-top: 10px;
       }
     }
-
-    .home-button {
-      position: absolute;
-      top: 0;
-      right: 0;
-
-      cursor: pointer;
-      font-size: $INFO-TITLE-SIZE;
-      text-decoration: none;
-
-      @include media-query(DESKTOP) {
-        font-size: $INFO-TITLE-SIZE;
-      }
-    }
   }
 }
 
 .content-container {
   .info-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: baseline;
-    background-color: rgba(0,0,0,.33);
-    padding: 16px;
-    box-sizing: border-box;
-
-    @include media-query(DESKTOP) {
-      flex-direction: row;
-    }
-
-    .info-title-container {
+    .info-title {
       width: 100%;
-      display: flex;
-      flex-direction: row;
-      align-items: baseline;
-      margin-bottom: 12px;
-      font-weight: bold;
+      display: block;
       font-size: $INFO-TITLE-SIZE;
+      padding: $INFO-TITLE-SIZE/2 0 $INFO-TITLE-SIZE/4;
 
       @include media-query(DESKTOP) {
-        display: block;
-        margin-bottom: 0;
-        width: auto;
         min-width: 120px;
       }
+    }
 
-      .info-title-languages {
-        width: auto;
-        padding: 0 32px;
-        display: flex;
-        flex-direction: row;
-        font-size: $INFO-TEXT-SIZE;
-        font-weight: normal;
+    .info-languages {
+      width: auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      padding: 0;
+      padding-top: 32px;
+      box-sizing: border-box;
+      font-size: $INFO-LINK-SIZE;
 
-        @include media-query(DESKTOP) {
-          font-size: $INFO-TEXT-SIZE;
-          padding: 16px 0;
-          width: 100%;
+      @include media-query(DESKTOP) {
+        width: 100%;
+      }
+
+      .language-selector {
+        cursor: pointer;
+        & + .language-selector {
+          margin-left: 12px;
         }
-
-        .language-selector {
-          cursor: pointer;
-          & + .language-selector {
-            margin-left: 12px;
-          }
-          &.selected {
-            text-decoration: underline;
-            cursor: default;
-          }
+        &.selected {
+          text-decoration: underline;
+          cursor: default;
         }
       }
     }
 
-    .info-content-container {
-      width: 100%;
-      padding-left: 16px;
+    .info-text {
+      width: 180px;
       box-sizing: border-box;
-      font-family: $FONT-SERIF;
       font-size: $INFO-TEXT-SIZE;
-      font-weight: bold;
       line-height: 1.5;
 
       @include media-query(DESKTOP) {
+        width: 180px;
         font-size: $INFO-TEXT-SIZE;
       }
 
@@ -227,8 +199,6 @@ a {
         display: block;
         margin-top: 22px;
         text-align: right;
-        font-family: $FONT-SANS;
-        font-weight: normal;
       }
     }
   }
