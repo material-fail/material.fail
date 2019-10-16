@@ -31,7 +31,7 @@
 
         <div class="list-container">
           {% if page.title == "material.fail" %}
-            {% assign publishers = site.pages | where_exp:"page","page.unlist != true" %}
+            {% assign publishers = site.pages | where_exp:"page","page.unlist != true" | sort:"title" %}
             <ul>
             {% for pub in publishers %}
               <li>
@@ -41,15 +41,15 @@
             </ul>
           {% elsif page.title == "404" %}
             <div class="_404-text">404</div>
-          {% else %}
+          {% elsif page.books %}
+            {% assign books = page.books | sort:"title" %}
             <ul>
-            {% for book in page.books %}
+            {% for book in books %}
               <li>
                 <a href="{{ book.link }}" target="_blank">{{ book.title }}</a>
               </li>
             {% endfor %}
             </ul>
-            {{ content }}
           {% endif %}
         </div>
 
