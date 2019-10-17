@@ -31,22 +31,42 @@
 
         <div class="list-container">
           {% if page.title == "material.fail" %}
-            {% assign publishers = site.pages | where_exp:"page","page.unlist != true" | sort:"title" %}
+            {% assign publishers = site.pages | where_exp:"page","page.unlist != true" %}
+
+            {% capture pubsmegazord %}
+              {% for pub in publishers %}
+                ‡{{pub.title | slugify:"latin"}}√{{pub.url}}√{{pub.title}}
+              {% endfor %}
+            {% endcapture %}
+
+            {% assign pubsobjslist = pubsmegazord | split:"‡" | sort %}
+
             <ul>
-            {% for pub in publishers %}
+            {% for pubobj in pubsobjslist %}
+              {% assign pubdata = pubobj | split:"√" %}
               <li>
-                <a href="{{ site.baseurl }}{{ pub.url }}">{{ pub.title }}</a>
+                <a href="{{ site.baseurl }}{{ pubdata[1] }}">{{ pubdata[2] }}</a>
               </li>
             {% endfor %}
+
             </ul>
           {% elsif page.title == "404" %}
             <div class="_404-text">404</div>
           {% elsif page.books %}
-            {% assign books = page.books | sort:"title" %}
+
+            {% capture booksmegazord %}
+              {% for book in page.books %}
+                ‡{{book.title | slugify:"latin"}}√{{book.link}}√{{book.title}}
+              {% endfor %}
+            {% endcapture %}
+
+            {% assign booksobjslist = booksmegazord | split:"‡" | sort %}
+
             <ul>
-            {% for book in books %}
+            {% for bookobj in booksobjslist %}
+              {% assign bookdata = bookobj | split:"√" %}
               <li>
-                <a href="{{ book.link }}" target="_blank">{{ book.title }}</a>
+                <a href="{{ bookdata[1] }}" target="_blank">{{ bookdata[2] }}</a>
               </li>
             {% endfor %}
             </ul>
