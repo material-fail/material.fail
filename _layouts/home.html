@@ -49,9 +49,11 @@
             <ul>
             {% for pubobj in pubsobjslist %}
               {% assign pubdata = pubobj | split:"√" %}
-              <li>
-                <a href="{{ site.baseurl }}{{ pubdata[1] }}">{{ pubdata[2] }}</a>
-              </li>
+              {% if pubdata[2] %}
+                <li>
+                  <a href="{{ site.baseurl }}{{ pubdata[1] }}">{{ pubdata[2] }}</a>
+                </li>
+              {% endif %}
             {% endfor %}
 
             </ul>
@@ -70,9 +72,11 @@
             <ul>
             {% for bookobj in booksobjslist %}
               {% assign bookdata = bookobj | split:"√" %}
-              <li>
-                <a href="{{ bookdata[1] }}" target="_blank">{{ bookdata[2] }}</a>
-              </li>
+              {% if bookdata[2] %}
+                <li>
+                  <a href="{{ bookdata[1] }}" target="_blank">{{ bookdata[2] }}</a>
+                </li>
+              {% endif %}
             {% endfor %}
             </ul>
           {% endif %}

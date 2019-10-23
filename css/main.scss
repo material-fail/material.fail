@@ -129,13 +129,10 @@ a {
     li {
       font-size: 0.8 * $LIST-TEXT-SIZE;
       line-height: 1;
+      padding: 10px 0;
 
       @include media-query(DESKTOP) {
         font-size: $LIST-TEXT-SIZE;
-      }
-
-      & + li {
-        margin-top: 10px;
       }
 
       a {
