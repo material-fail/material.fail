@@ -9,7 +9,12 @@
       <div class="content-container">
 
         <div class="info-container">
-          <div class="info-title">{{ page.title }}</div>
+          <div class="info-title-wrapper">
+            <div class="info-title">{{ page.title }}</div>
+            {% unless page.title == "material.fail" %}
+              <div class="home-link"><a href="{{ site.baseurl }}/">material.fail</a></div>
+            {% endunless %}
+          </div>
 
           <div class="info-text" id="intro-text">
             <div id="info-en" class="info-content">{{ page.about-en }}</div>

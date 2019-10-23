@@ -147,14 +147,35 @@ a {
 
 .content-container {
   .info-container {
-    .info-title {
-      width: 100%;
-      display: block;
-      font-size: $INFO-TITLE-SIZE;
-      margin-bottom: $INFO-TEXT-SIZE;
+    .info-title-wrapper {
+      display: flex;
+      flex-direction: row;
+      position: relative;
 
-      @include media-query(DESKTOP) {
-        min-width: 120px;
+      .info-title {
+        width: 100%;
+        display: block;
+        font-size: $INFO-TITLE-SIZE;
+        margin-bottom: $INFO-TEXT-SIZE;
+
+        @include media-query(DESKTOP) {
+          min-width: 120px;
+        }
+      }
+      .home-link {
+        text-align: left;
+        position: relative;
+        font-size: $INFO-LINK-SIZE;
+
+        a {
+          color: $LIST-COLOR;
+        }
+
+        @include media-query(DESKTOP) {
+          position: absolute;
+          top: 0;
+          right: -64px;
+        }
       }
     }
 
