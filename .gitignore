@@ -6,3 +6,5 @@ public/
 _site/
 .sass-cache/
 venv/
+.jekyll-cache
+
