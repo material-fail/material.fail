@@ -197,6 +197,14 @@ a {
       margin-top: 10px;
     }
 
+    .list-item-index {
+      display: inline;
+      color: #00ffff;
+    }
+    .list-item-index-hidden {
+      opacity: 0;
+    }
+
     li {
       font-size: 0.8 * $LIST-TEXT-SIZE;
       line-height: 2;
@@ -209,6 +217,7 @@ a {
       a {
         color: $LIST-COLOR;
         text-transform: uppercase;
+        padding-left: 36px;
       }
     }
   }

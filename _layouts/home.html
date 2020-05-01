@@ -57,11 +57,20 @@
 
                   {% assign pubsobjslist = pubsmegazord | split:"‡" | sort %}
 
+                  {% assign lastLetter = "" %}
                   <ul>
                   {% for pubobj in pubsobjslist %}
                     {% assign pubdata = pubobj | split:"√" %}
                     {% if pubdata[2] %}
+                      {% assign thisLetter = pubdata[2] | slice: 0 %}
+                      {% if thisLetter != lastLetter %}
+                        {% assign lastLetter = thisLetter %}
+                        {% assign thisClass = "list-item-index" %}
+                      {% else %}
+                        {% assign thisClass = "list-item-index list-item-index-hidden" %}
+                      {% endif %}
                       <li>
+                        <div class="{{ thisClass }}">{{ thisLetter }}</div>
                         <a href="{{ site.baseurl }}{{ pubdata[1] }}">{{ pubdata[2] }}</a>
                       </li>
                     {% endif %}
