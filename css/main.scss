@@ -94,62 +94,85 @@ a {
     }
   }
 
-  .list-container {
+  .list-container-container {
     position: relative;
     width: 100%;
-    height: 100%;
     padding: 0;
-    margin: 64px 0 0;
+    margin: 0 auto;
     box-sizing: border-box;
 
     @include media-query(DESKTOP) {
-      width: 75%;
-      margin: 0;
+      padding-left: 50px;
     }
 
-    .list-background-container {
-      position: absolute;
-      top: 0;
+    .list-container {
+      position: relative;
       width: 100%;
-      height: 100%;
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
 
-      .list-background {
-        margin: 0 auto;
+      @include media-query(DESKTOP) {
+        height: 100%;
+      }
+
+      .list-background-container {
+        position: absolute;
+        top: 0;
         width: 100%;
         height: 100%;
-        background-image: url({{ site.baseurl }}/media/images/backgrounds/background-7.jpg);
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center 25%;
 
         @include media-query(DESKTOP) {
-          width: 33%;
+          padding-bottom: 0;
+          height: 100%;
+        }
+
+        .list-background {
+          margin: 0 auto;
+          width: 100%;
+          height: 100%;
+
+          background-image: url({{ site.baseurl }}/media/images/backgrounds/background-7.jpg);
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center top;
+
+          @include media-query(DESKTOP) {
+            width: 40%;
+            height: 100%;
+            padding-bottom: 0;
+            background-position: center 25%;
+          }
         }
       }
-    }
 
-    .list-content-container {
-      width: 100%;
-      height: 100%;
-      position: relative;
-      overflow: scroll;
-
-      &::-webkit-scrollbar {
-        width: 0px;
-        background: transparent;
-      }
-
-      .list-content {
-        margin: 0 auto;
-        position: absolute;
-        top: 80%;
+      .list-content-container {
         width: 100%;
         height: 100%;
+        position: relative;
+        overflow: scroll;
 
-        .list-content-align {
-          width: 33%;
+        @include media-query(DESKTOP) {
           height: 100%;
+        }
+
+        &::-webkit-scrollbar {
+          width: 0px;
+          background: transparent;
+        }
+
+        .list-content {
           margin: 0 auto;
+          position: absolute;
+          top: 80%;
+          width: 100%;
+          height: 100%;
+
+          .list-content-align {
+            width: 40%;
+            height: 100%;
+            margin: 0 auto;
+          }
         }
       }
     }
