@@ -120,10 +120,10 @@ a {
         background-image: url({{ site.baseurl }}/media/images/backgrounds/background-7.jpg);
         background-size: contain;
         background-repeat: no-repeat;
-        background-position: center center;
+        background-position: center 25%;
 
         @include media-query(DESKTOP) {
-          width: 50%;
+          width: 33%;
         }
       }
     }
@@ -147,7 +147,7 @@ a {
         height: 100%;
 
         .list-content-align {
-          width: 50%;
+          width: 33%;
           height: 100%;
           margin: 0 auto;
         }
