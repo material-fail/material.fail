@@ -95,6 +95,7 @@ a {
   }
 
   .list-container {
+    position: relative;
     width: 100%;
     height: 100%;
     padding: 0;
@@ -103,8 +104,55 @@ a {
 
     @include media-query(DESKTOP) {
       width: 75%;
-      padding-left: 160px;
       margin: 0;
+    }
+
+    .list-background-container {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+
+      .list-background {
+        margin: 0 auto;
+        width: 100%;
+        height: 100%;
+        background-image: url({{ site.baseurl }}/media/images/backgrounds/background-7.jpg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+
+        @include media-query(DESKTOP) {
+          width: 50%;
+        }
+      }
+    }
+
+    .list-content-container {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: scroll;
+
+      &::-webkit-scrollbar {
+        width: 0px;
+        background: transparent;
+      }
+
+      .list-content {
+        margin: 0 auto;
+        position: absolute;
+        top: 0;
+        margin-top: 80%;
+        width: 100%;
+        height: 100%;
+
+        .list-content-align {
+          width: 50%;
+          height: 100%;
+          margin: 0 auto;
+        }
+      }
     }
   }
 }
@@ -128,7 +176,7 @@ a {
 
     li {
       font-size: 0.8 * $LIST-TEXT-SIZE;
-      line-height: 0.9;
+      line-height: 2;
       padding: 12px 0;
 
       @include media-query(DESKTOP) {
@@ -137,6 +185,7 @@ a {
 
       a {
         color: $LIST-COLOR;
+        text-transform: uppercase;
       }
     }
   }

@@ -35,51 +35,61 @@
         </div>
 
         <div class="list-container">
-          {% if page.title == "material.fail" %}
-            {% assign publishers = site.pages | where_exp:"page","page.unlist != true" %}
+          <div class="list-background-container">
+            <div class="list-background"></div>
+          </div>
 
-            {% capture pubsmegazord %}
-              {% for pub in publishers %}
-                ‡{{pub.title | slugify:"latin"}}√{{pub.url}}√{{pub.title}}
-              {% endfor %}
-            {% endcapture %}
+          <div class="list-content-container">
+            <div class="list-content">
+              <div class="list-content-align">
+                {% if page.title == "material.fail" %}
+                  {% assign publishers = site.pages | where_exp:"page","page.unlist != true" %}
 
-            {% assign pubsobjslist = pubsmegazord | split:"‡" | sort %}
+                  {% capture pubsmegazord %}
+                    {% for pub in publishers %}
+                      ‡{{pub.title | slugify:"latin"}}√{{pub.url}}√{{pub.title}}
+                    {% endfor %}
+                  {% endcapture %}
 
-            <ul>
-            {% for pubobj in pubsobjslist %}
-              {% assign pubdata = pubobj | split:"√" %}
-              {% if pubdata[2] %}
-                <li>
-                  <a href="{{ site.baseurl }}{{ pubdata[1] }}">{{ pubdata[2] }}</a>
-                </li>
-              {% endif %}
-            {% endfor %}
+                  {% assign pubsobjslist = pubsmegazord | split:"‡" | sort %}
 
-            </ul>
-          {% elsif page.title == "404" %}
-            <div class="_404-text">404</div>
-          {% elsif page.books %}
+                  <ul>
+                  {% for pubobj in pubsobjslist %}
+                    {% assign pubdata = pubobj | split:"√" %}
+                    {% if pubdata[2] %}
+                      <li>
+                        <a href="{{ site.baseurl }}{{ pubdata[1] }}">{{ pubdata[2] }}</a>
+                      </li>
+                    {% endif %}
+                  {% endfor %}
 
-            {% capture booksmegazord %}
-              {% for book in page.books %}
-                ‡{{book.title | slugify:"latin"}}√{{book.link}}√{{book.title}}
-              {% endfor %}
-            {% endcapture %}
+                  </ul>
+                {% elsif page.title == "404" %}
+                  <div class="_404-text">404</div>
+                {% elsif page.books %}
 
-            {% assign booksobjslist = booksmegazord | split:"‡" | sort %}
+                  {% capture booksmegazord %}
+                    {% for book in page.books %}
+                      ‡{{book.title | slugify:"latin"}}√{{book.link}}√{{book.title}}
+                    {% endfor %}
+                  {% endcapture %}
 
-            <ul>
-            {% for bookobj in booksobjslist %}
-              {% assign bookdata = bookobj | split:"√" %}
-              {% if bookdata[2] %}
-                <li>
-                  <a href="{{ bookdata[1] }}" target="_blank">{{ bookdata[2] }}</a>
-                </li>
-              {% endif %}
-            {% endfor %}
-            </ul>
-          {% endif %}
+                  {% assign booksobjslist = booksmegazord | split:"‡" | sort %}
+
+                  <ul>
+                  {% for bookobj in booksobjslist %}
+                    {% assign bookdata = bookobj | split:"√" %}
+                    {% if bookdata[2] %}
+                      <li>
+                        <a href="{{ bookdata[1] }}" target="_blank">{{ bookdata[2] }}</a>
+                      </li>
+                    {% endif %}
+                  {% endfor %}
+                  </ul>
+                {% endif %}
+              </div>
+            </div>
+          </div>
         </div>
 
       </div>
