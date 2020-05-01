@@ -72,6 +72,7 @@ a {
   box-sizing: border-box;
   border: 20px $BACKGROUND-COLOR solid;
   background-color: $FOREGROUND-COLOR;
+  justify-content: flex-start;
 
   @include media-query(DESKTOP) {
     flex-direction: row;
@@ -104,7 +105,8 @@ a {
     flex-basis: auto;
 
     @include media-query(DESKTOP) {
-      padding-left: 20px;
+      width: 75%;
+      max-width: 800px;
       height: 100%;
       flex-grow: 0;
     }
@@ -131,7 +133,7 @@ a {
         background-position: center 25%;
 
         @include media-query(DESKTOP) {
-          width: 25%;
+          width: 256px;
           height: 100%;
           padding-bottom: 0;
         }
@@ -171,7 +173,7 @@ a {
           margin: 0 auto;
 
           @include media-query(DESKTOP) {
-            width: 25%;
+            width: 256px;
           }
         }
       }
