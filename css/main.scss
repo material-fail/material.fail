@@ -200,7 +200,7 @@ a {
 
     .list-item-index {
       display: inline;
-      color: #00ffff;
+      color: $LIST-INDEX-COLOR;
     }
     .list-item-index-hidden {
       opacity: 0;
@@ -216,9 +216,10 @@ a {
       }
 
       a {
-        color: $LIST-COLOR;
         text-transform: uppercase;
         padding-left: 36px;
+        color: invert($LIST-COLOR, 100%);
+        mix-blend-mode: difference;
       }
     }
   }
