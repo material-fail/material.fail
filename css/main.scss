@@ -90,7 +90,7 @@ a {
     box-sizing: border-box;
 
     @include media-query(DESKTOP) {
-      width: 180px;
+      width: $INFO-COLUMN-WIDTH;
       height: 100%;
     }
   }
