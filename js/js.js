@@ -36,8 +36,6 @@ function setBackgroundImage() {
   const urlLength = window.location.href.replace(/\//g, '').length;
   const dailyRandomNumber = (urlLength + dayOfYear()) % 10;
   const newImageUrl = `url({{ site.baseurl }}/media/images/backgrounds/background-sq-${dailyRandomNumber}.jpg)`;
-  console.log(newImageUrl);
-  console.log(backgroundImageElement.style);
   backgroundImageElement.style['background-image'] = newImageUrl;
 }
 
