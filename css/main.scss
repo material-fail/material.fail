@@ -81,20 +81,6 @@ a {
 }
 
 .content-container {
-  .info-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 100%;
-    margin: 0;
-    box-sizing: border-box;
-
-    @include media-query(DESKTOP) {
-      width: $INFO-COLUMN-WIDTH;
-      height: 100%;
-    }
-  }
-
   .list-container {
     position: relative;
     width: 100%;
@@ -225,7 +211,7 @@ a {
       a {
         text-transform: uppercase;
         padding-left: 20px;
-        color: invert($LIST-COLOR, 100%);
+        color: invert($TEXT-COLOR, 100%);
         mix-blend-mode: difference;
 
         @include media-query(DESKTOP) {
@@ -238,74 +224,120 @@ a {
 
 .content-container {
   .info-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    box-sizing: border-box;
+
+    @include media-query(DESKTOP) {
+      width: auto;
+    }
+
     .info-title-wrapper {
       display: flex;
-      flex-direction: row;
-      position: relative;
-
-      .info-title {
-        width: 100%;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      @include media-query(DESKTOP) {
         display: block;
-        font-size: $INFO-TITLE-SIZE;
-        margin-bottom: $INFO-TEXT-SIZE;
+      }
+    }
+
+    .info-title {
+      margin-bottom: $INFO-TEXT-SIZE;
+    }
+    .info-title.materialfail {
+      opacity: 0;
+      display: none;
+      @include media-query(DESKTOP) {
+        display: block;
+      }
+    }
+
+    .home-link {
+      margin-bottom: 1 * $INFO-TEXT-SIZE;
+      @include media-query(DESKTOP) {
+        margin-bottom: 3 * $INFO-TEXT-SIZE;
+      }
+    }
+    .home-link.mobile {
+      display: block;
+      opacity: 1;
+      @include media-query(DESKTOP) {
+        opacity: 0;
+        pointer-events: none;
+      }
+    }
+    .home-link.materialfail {
+      pointer-events: none;
+    }
+
+    .info-container-left {
+      display: none;
+      margin-right: 30px;
+      @include media-query(DESKTOP) {
+        display: block;
+      }
+    }
+
+    .info-container-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      margin: 0;
+      box-sizing: border-box;
+
+      @include media-query(DESKTOP) {
+        width: $INFO-COLUMN-WIDTH;
+        height: 100%;
+      }
+
+      .info-text {
+        width: 100%;
+        box-sizing: border-box;
+        font-size: $INFO-TEXT-SIZE;
+        line-height: 1.5;
 
         @include media-query(DESKTOP) {
-          min-width: 120px;
+          font-size: $INFO-TEXT-SIZE;
+        }
+
+        .info-content {
+          display: none;
+        }
+
+        .publisher-link {
+          display: block;
+          margin-top: 22px;
+          text-align: right;
         }
       }
-      .home-link {
-        text-align: left;
-        position: relative;
-        font-size: $INFO-LINK-SIZE;
 
-        a {
-          color: $LIST-COLOR;
-        }
-      }
-    }
-
-    .info-text {
-      width: 100%;
-      box-sizing: border-box;
-      font-size: $INFO-TEXT-SIZE;
-      line-height: 1.5;
-
-      @include media-query(DESKTOP) {
+      .info-languages {
+        width: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        padding: 32px 0 16px;
+        box-sizing: border-box;
         font-size: $INFO-TEXT-SIZE;
-      }
 
-      .info-content {
-        display: none;
-      }
-
-      .publisher-link {
-        display: block;
-        margin-top: 22px;
-        text-align: right;
-      }
-    }
-
-    .info-languages {
-      width: auto;
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-end;
-      padding: 32px 0 16px;
-      box-sizing: border-box;
-      font-size: $INFO-LINK-SIZE;
-
-      @include media-query(DESKTOP) {
-        padding: 32px 8px 0 0;
-      }
-
-      .language-selector {
-        cursor: pointer;
-        & + .language-selector {
-          margin-left: 12px;
+        @include media-query(DESKTOP) {
+          padding: 32px 8px 0 0;
         }
-        &.selected {
-          text-decoration: underline;
-          cursor: default;
+
+        .language-selector {
+          cursor: pointer;
+          & + .language-selector {
+            margin-left: 12px;
+          }
+          &.selected {
+            text-decoration: underline;
+            cursor: default;
+          }
         }
       }
     }

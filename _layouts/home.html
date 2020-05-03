@@ -9,33 +9,37 @@
       <div class="content-container">
 
         <div class="info-container">
-          <div class="info-container-top">
-            <div class="info-title-wrapper">
-              <div class="info-title">{{ page.title }}</div>
-              {% unless page.title == "material.fail" %}
-                <div class="home-link"><a href="{{ site.baseurl }}/">material.fail</a></div>
-              {% endunless %}
-            </div>
-
-            <div class="info-text" id="intro-text">
-              <div id="info-en" class="info-content">{{ page.about-en }}</div>
-              <div id="info-es" class="info-content">{{ page.about-es }}</div>
-              <div id="info-pt" class="info-content">{{ page.about-pt }}</div>
-
-              {% if page.site %}
-                <a class="publisher-link" href={{ page.site }} target="_blank">{{ page.site }}</a>
-              {% endif %}
-            </div>
-
-            <div class="info-languages">
-              <div class="language-selector">en</div>
-              <div class="language-selector">es</div>
-              <div class="language-selector">pt</div>
-            </div>
+          {% assign isHome = page.title | slugify | replace:'-','' %}
+          <div class="info-container-left">
+            <a class="home-link {{ isHome }}" href="{{ site.baseurl }}/">material.fail</a>
           </div>
+          <div class="info-container-right">
+            <div class="info-container-top">
+              <div class="info-title-wrapper">
+                <a class="home-link mobile {{ isHome }}" href="{{ site.baseurl }}/">material.fail</a>
+                <div class="info-title {{ isHome }}">{{ page.title }}</div>
+              </div>
 
-          <div class="info-container-bottom">
-            <!-- links to about pages etc -->
+              <div class="info-text" id="intro-text">
+                <div id="info-en" class="info-content">{{ page.about-en }}</div>
+                <div id="info-es" class="info-content">{{ page.about-es }}</div>
+                <div id="info-pt" class="info-content">{{ page.about-pt }}</div>
+
+                {% if page.site %}
+                  <a class="publisher-link" href={{ page.site }} target="_blank">{{ page.site }}</a>
+                {% endif %}
+              </div>
+
+              <div class="info-languages">
+                <div class="language-selector">en</div>
+                <div class="language-selector">es</div>
+                <div class="language-selector">pt</div>
+              </div>
+            </div>
+
+            <div class="info-container-bottom">
+              <!-- links to about pages etc -->
+            </div>
           </div>
 
         </div>
