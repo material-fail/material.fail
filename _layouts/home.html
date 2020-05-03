@@ -81,12 +81,10 @@
                       </li>
                     {% endif %}
                   {% endfor %}
-
                   </ul>
                 {% elsif page.title == "404" %}
                   <div class="_404-text">404</div>
                 {% elsif page.books %}
-
                   {% capture booksmegazord %}
                     {% for book in page.books %}
                       ‡{{book.title | slugify:"latin"}}√{{book.link}}√{{book.title}}
@@ -95,11 +93,20 @@
 
                   {% assign booksobjslist = booksmegazord | split:"‡" | sort %}
 
+                  {% assign lastLetter = "" %}
                   <ul>
                   {% for bookobj in booksobjslist %}
                     {% assign bookdata = bookobj | split:"√" %}
                     {% if bookdata[2] %}
+                      {% assign thisLetter = bookdata[2] | slice: 0 %}
+                      {% if thisLetter != lastLetter %}
+                        {% assign lastLetter = thisLetter %}
+                        {% assign thisClass = "list-item-index" %}
+                      {% else %}
+                        {% assign thisClass = "list-item-index list-item-index-hidden" %}
+                      {% endif %}
                       <li>
+                        <div class="{{ thisClass }}">{{ thisLetter }}</div>
                         <a href="{{ bookdata[1] }}" target="_blank">{{ bookdata[2] }}</a>
                       </li>
                     {% endif %}

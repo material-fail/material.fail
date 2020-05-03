@@ -190,14 +190,6 @@ a {
       margin-top: 10px;
     }
 
-    .list-item-index {
-      display: inline;
-      color: $LIST-INDEX-COLOR;
-    }
-    .list-item-index-hidden {
-      opacity: 0;
-    }
-
     li {
       font-size: 0.66 * $LIST-TEXT-SIZE;
       line-height: 1.2;
@@ -208,9 +200,19 @@ a {
         line-height: 2;
       }
 
+      .list-item-index {
+        display: inline-block;
+        color: $LIST-INDEX-COLOR;
+        text-transform: uppercase;
+        width: 24px;
+      }
+      .list-item-index-hidden {
+        opacity: 0;
+      }
+
       a {
         text-transform: uppercase;
-        padding-left: 20px;
+        padding-left: 16px;
         color: invert($TEXT-COLOR, 100%);
         mix-blend-mode: difference;
 
