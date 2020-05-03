@@ -176,8 +176,17 @@ a {
 .content-container {
   .list-container {
     ._404-text {
-      font-size: 404px;
+      font-size: 180px;
       overflow: hidden;
+      color: invert($TEXT-COLOR, 100%);
+      mix-blend-mode: difference;
+      margin-top: -70%;
+      line-height: .8;
+
+      @include media-query(DESKTOP) {
+        margin-left: -35%;
+        font-size: 404px;
+      }
     }
 
     ul {
