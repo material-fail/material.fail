@@ -245,6 +245,9 @@ a {
 
     @include media-query(DESKTOP) {
       width: auto;
+      &.materialfail {
+        flex-direction: row-reverse;
+      }
     }
 
     .info-title-wrapper {
@@ -277,8 +280,11 @@ a {
       display: block;
       opacity: 1;
       @include media-query(DESKTOP) {
-        opacity: 0;
         pointer-events: none;
+        opacity: 0;
+        &.materialfail {
+          opacity: 1;
+        }
       }
     }
     .home-link.materialfail {
@@ -290,6 +296,9 @@ a {
       margin-right: 30px;
       @include media-query(DESKTOP) {
         display: block;
+        &.materialfail {
+          opacity: 0;
+        }
       }
     }
 

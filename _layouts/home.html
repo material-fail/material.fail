@@ -8,9 +8,9 @@
     <div class="backround-image">
       <div class="content-container">
 
-        <div class="info-container">
-          {% assign isHome = page.title | slugify | replace:'-','' %}
-          <div class="info-container-left">
+        {% assign isHome = page.title | slugify | replace:'-','' %}
+        <div class="info-container {{ isHome }}">
+          <div class="info-container-left {{ isHome }}">
             <a class="home-link {{ isHome }}" href="{{ site.baseurl }}/">material.fail</a>
           </div>
           <div class="info-container-right">
